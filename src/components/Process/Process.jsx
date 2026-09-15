@@ -1,48 +1,66 @@
 import React from 'react';
-import { Search, Calendar, Key } from 'lucide-react';
+import { Search, Calendar, FileText, Key } from 'lucide-react';
 import './Process.css';
 
 const steps = [
   {
-    icon: <Search size={28} />,
+    icon: <Search size={24} />,
     number: '01',
-    title: 'Find Properties',
-    description: 'Browse our extensive portfolio and use smart filters to find properties that match your criteria.'
+    title: 'Discover & Explore',
+    description: 'Browse through our curated portfolio of premium properties.'
   },
   {
-    icon: <Calendar size={28} />,
+    icon: <Calendar size={24} />,
     number: '02',
-    title: 'Schedule Visit',
-    description: 'Book property viewings at your convenience. Our agents will arrange everything for you.'
+    title: 'Schedule a Visit',
+    description: 'Book viewings at your convenience with our expert agents.'
   },
   {
-    icon: <Key size={28} />,
+    icon: <FileText size={24} />,
     number: '03',
-    title: 'Get Keys',
-    description: 'Complete the purchase process and receive the keys to your new home.'
+    title: 'Make an Offer',
+    description: 'Get expert guidance on making competitive offers.'
+  },
+  {
+    icon: <Key size={24} />,
+    number: '04',
+    title: 'Close the Deal',
+    description: 'Complete purchase seamlessly and receive your keys.'
   }
 ];
 
 const Process = () => {
   return (
     <section className="process section container">
-      <div className="section-header">
-        <p className="section-subtitle">How It Works</p>
-        <h2 className="section-title">Simple Steps to Your New Home</h2>
-      </div>
+      <div className="process-layout">
+        <div className="process-content">
+          <p className="section-subtitle">Our Process</p>
+          <h2 className="section-title">A Simple Process<br />To Your New Home</h2>
+          <p className="process-description">
+            From initial search to getting your keys, our streamlined process makes finding your dream home effortless.
+          </p>
 
-      <div className="process-grid">
-        {steps.map((step, index) => (
-          <div className="process-step" key={index}>
-            <div className="step-icon-wrapper">
-              <div className="step-icon">{step.icon}</div>
-              {index < steps.length - 1 && <div className="step-connector"></div>}
-            </div>
-            <div className="step-number">{step.number}</div>
-            <h3 className="step-title">{step.title}</h3>
-            <p className="step-description">{step.description}</p>
+          <div className="process-steps">
+            {steps.map((step, index) => (
+              <div className="process-step" key={index}>
+                <div className="step-number">{step.number}</div>
+                <div className="step-info">
+                  <h3 className="step-title">{step.title}</h3>
+                  <p className="step-description">{step.description}</p>
+                </div>
+                {index < steps.length - 1 && <div className="step-connector"></div>}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className="process-image">
+          <img
+            src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Modern home"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );

@@ -14,9 +14,12 @@ const PropertyListings = () => {
 
   return (
     <section className="property-listings section container" id="properties">
-      <div className="section-header">
-        <p className="section-subtitle">Our Portfolio</p>
-        <h2 className="section-title">Featured Properties</h2>
+      <div className="property-listings-header">
+        <div className="section-header">
+          <p className="section-subtitle">Featured Properties</p>
+          <h2 className="section-title">Premium Properties<br />For A Better Lifestyle</h2>
+        </div>
+        <a href="#" className="view-all-link">View All Properties</a>
       </div>
 
       <div className="property-tabs">

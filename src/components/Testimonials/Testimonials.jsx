@@ -6,9 +6,12 @@ import './Testimonials.css';
 const Testimonials = () => {
   return (
     <section className="testimonials section container">
-      <div className="section-header">
-        <p className="section-subtitle">Testimonials</p>
-        <h2 className="section-title">What Our Clients Say</h2>
+      <div className="testimonials-header">
+        <div className="section-header">
+          <p className="section-subtitle">Testimonials</p>
+          <h2 className="section-title">What Our Clients Say<br />About Us</h2>
+        </div>
+        <a href="#" className="view-all-link">View All Reviews</a>
       </div>
 
       <div className="testimonials-grid">

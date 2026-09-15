@@ -1,4 +1,4 @@
-.about-grid {
+.about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
@@ -6,14 +6,28 @@
 }
 
 .about-image {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  position: relative;
 }
 
 .about-image img {
   width: 100%;
-  height: 450px;
+  height: 500px;
   object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-image::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 120px;
+  height: 120px;
+  background: var(--color-accent);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .about-content .section-subtitle {
@@ -22,57 +36,55 @@
 
 .about-content .section-title {
   text-align: left;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .about-description {
   color: var(--color-text-muted);
   font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.7;
+  margin-bottom: 32px;
 }
 
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
 }
 
-.stat-item {
-  text-align: center;
-}
-
-.stat-icon {
-  display: inline-flex;
+.benefits-list li {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  background-color: rgba(25, 167, 142, 0.1);
+  gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.benefits-list li svg {
   color: var(--color-accent);
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
-
-.stat-value {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  font-family: var(--font-heading);
-}
-
-.stat-label {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 992px) {
-  .about-grid {
+  .about-layout {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  .about-image {
+    order: -1;
+  }
   .about-image img {
     height: 350px;
+  }
+  .about-content .section-subtitle,
+  .about-content .section-title {
+    text-align: center;
+  }
+  .about-description {
+    text-align: center;
+  }
+  .benefits-list {
+    align-items: center;
   }
 }

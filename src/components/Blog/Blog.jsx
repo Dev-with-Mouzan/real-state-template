@@ -5,9 +5,12 @@ import './Blog.css';
 const Blog = () => {
   return (
     <section className="blog section container" id="blog">
-      <div className="section-header">
-        <p className="section-subtitle">Latest News</p>
-        <h2 className="section-title">Our Blog</h2>
+      <div className="blog-header">
+        <div className="section-header">
+          <p className="section-subtitle">Latest News</p>
+          <h2 className="section-title">Tips, Trends & Insights<br />From Our Blog</h2>
+        </div>
+        <a href="#" className="view-all-link">Explore More</a>
       </div>
 
       <div className="blog-grid">

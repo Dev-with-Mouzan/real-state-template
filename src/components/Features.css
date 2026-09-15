@@ -1,39 +1,42 @@
 .features {
-  padding-top: 120px; /* space for the search bar that overflows from hero */
+  padding-top: 140px;
+  background: linear-gradient(180deg, var(--color-bg-dark) 0%, var(--color-bg-main) 100%);
+  margin-top: -60px;
+  position: relative;
+  z-index: 5;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .feature-card {
   text-align: center;
-  padding: 32px 24px;
+  padding: 32px 20px;
   background-color: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   transition: var(--transition-normal);
-  border: 1px solid var(--color-border);
+  border: none;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(25, 167, 142, 0.2);
+  box-shadow: var(--shadow-hover);
 }
 
 .feature-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
-  background-color: rgba(25, 167, 142, 0.1);
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-accent-light);
   color: var(--color-accent);
   border-radius: 50%;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   transition: var(--transition-normal);
 }
 
@@ -43,13 +46,15 @@
 }
 
 .feature-title {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .feature-description {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 @media (max-width: 992px) {
@@ -61,5 +66,7 @@
 @media (max-width: 576px) {
   .features-grid {
     grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
   }
 }

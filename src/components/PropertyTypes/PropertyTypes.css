@@ -1,13 +1,37 @@
+.property-types-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.property-types-content .section-subtitle {
+  text-align: left;
+}
+
+.property-types-content .section-title {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.property-types-description {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 400px;
+}
+
 .types-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 16px;
 }
 
 .type-card {
   position: relative;
-  height: 280px;
-  border-radius: var(--radius-lg);
+  height: 240px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
 }
@@ -26,30 +50,46 @@
 .type-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13, 58, 51, 0.85) 0%, rgba(13, 58, 51, 0.2) 100%);
+  background: linear-gradient(to top, rgba(10, 46, 40, 0.9) 0%, rgba(10, 46, 40, 0.2) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
+  padding: 16px;
   transition: var(--transition-normal);
 }
 
 .type-card:hover .type-overlay {
-  background: linear-gradient(to top, rgba(13, 58, 51, 0.95) 0%, rgba(13, 58, 51, 0.4) 100%);
+  background: linear-gradient(to top, rgba(10, 46, 40, 0.95) 0%, rgba(10, 46, 40, 0.4) 100%);
 }
 
 .type-label {
   color: var(--color-text-light);
-  font-size: 1.4rem;
-  margin-bottom: 4px;
+  font-size: 1.1rem;
+  margin-bottom: 2px;
+  font-weight: 600;
 }
 
 .type-count {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
 }
 
 @media (max-width: 992px) {
+  .property-types-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .property-types-content {
+    text-align: center;
+  }
+  .property-types-content .section-subtitle,
+  .property-types-content .section-title {
+    text-align: center;
+  }
+  .property-types-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .types-grid {
     grid-template-columns: repeat(2, 1fr);
   }
