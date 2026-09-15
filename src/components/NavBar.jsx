@@ -7,7 +7,7 @@ const NavBar = () => {
     <nav className="navbar container glass">
       <div className="navbar-logo">
         <Building2 className="logo-icon" size={32} />
-        <span className="logo-text">Anti</span>
+        <span className="logo-text">Hamza Property</span>
       </div>
       
       <ul className="navbar-links">

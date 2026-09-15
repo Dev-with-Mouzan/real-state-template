@@ -24,8 +24,9 @@
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .navbar-links {
