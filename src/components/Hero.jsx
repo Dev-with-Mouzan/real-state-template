@@ -10,7 +10,7 @@ const Hero = () => {
         <h1 className="hero-title">
           Find Your<br />
           <span className="text-accent">Dream Property</span><br />
-          With Anti
+          With Hamza Property
         </h1>
         <p className="hero-description">
           We make property effortless. Discover modern homes, premium locations, and trusted real estate solutions all in one place.
@@ -18,7 +18,7 @@ const Hero = () => {
       </div>
 
       <div className="search-bar-wrapper">
-        <div className="search-bar glass">
+        <div className="search-bar">
           <div className="search-field">
             <div className="field-icon">
               <MapPin size={20} />
