@@ -22,7 +22,7 @@
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   color: #ffffff;
   white-space: nowrap;
@@ -34,9 +34,23 @@
 }
 
 .logo-tagline {
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--color-accent);
+  width: 0;
+  animation: typing 2s steps(20) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 130px; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 .navbar-links {
@@ -48,7 +62,7 @@
 .navbar-links a {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -77,8 +91,45 @@
   display: none;
 }
 
+.navbar.scrolled {
+  background: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 40px;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  transition: var(--transition-normal);
+}
+
+.nav-cta:hover {
+  background: var(--color-accent-hover);
+}
+
 @media (max-width: 992px) {
   .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(17, 17, 17, 0.98);
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .nav-cta {
     display: none;
   }
   .mobile-menu {

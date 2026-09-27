@@ -6,18 +6,18 @@ html {
 
 :root {
   /* Colors - Dark + Orange Premium Palette */
-  --color-primary: #111111; /* Near black */
+  --color-primary: #111111;
   --color-primary-light: #1a1a1a;
-  --color-primary-dark: #0a0a0a; /* Pure dark */
-  --color-accent: #E8732C; /* Vibrant orange */
-  --color-accent-hover: #d4651f;
-  --color-accent-light: rgba(232, 115, 44, 0.12);
-  
+  --color-primary-dark: #0a0a0a;
+  --color-accent: #E8732C;
+  --color-accent-hover: #ff8a50;
+  --color-accent-light: #fdf2ec;
+
   --color-bg-main: #FAFAFA;
   --color-bg-card: #FFFFFF;
-  --color-bg-dark: #111111; /* Dark sections */
-  --color-bg-darker: #0a0a0a; /* Darkest */
-  
+  --color-bg-dark: #111111;
+  --color-bg-darker: #0a0a0a;
+
   --color-text-main: #111111;
   --color-text-muted: #666666;
   --color-text-light: #FFFFFF;
@@ -29,6 +29,16 @@ html {
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+
+  /* Standardized type scale - 8 sizes */
+  --text-xs: 0.75rem;    /* 12px - labels, badges */
+  --text-sm: 0.875rem;   /* 14px - small text, captions */
+  --text-base: 1rem;     /* 16px - body text */
+  --text-lg: 1.125rem;   /* 18px - card titles */
+  --text-xl: 1.25rem;    /* 20px - section subtitles */
+  --text-2xl: 1.75rem;   /* 28px - section titles */
+  --text-3xl: 2.5rem;    /* 40px - hero/featured titles */
+  --text-4xl: 3.5rem;    /* 56px - hero headline */
 
   /* Shadows */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -43,7 +53,7 @@ html {
   --radius-full: 9999px;
 
   /* Transitions */
-  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s ease;
 }
 
 * {

@@ -11,12 +11,14 @@
   background-repeat: no-repeat;
   border-radius: 0;
   margin-top: 0;
+  justify-content: flex-end;
+  padding-bottom: 120px;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.35) 100%);
   z-index: 1;
 }
 
@@ -28,7 +30,7 @@
 
 .hero-badge {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--color-accent);
   text-transform: uppercase;
@@ -50,7 +52,7 @@
 }
 
 .hero-title {
-  font-size: 5.5rem;
+  font-size: 5rem;
   margin-bottom: 28px;
   color: #ffffff;
   font-weight: 700;
@@ -64,7 +66,7 @@
 
 .hero-description {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.1rem;
+  font-size: var(--text-lg);
   max-width: 520px;
   margin-bottom: 40px;
   line-height: 1.8;
@@ -84,8 +86,8 @@
   background: var(--color-accent);
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 4px;
+  font-size: var(--text-base);
+  border-radius: 50px;
   transition: var(--transition-normal);
 }
 
@@ -99,42 +101,17 @@
   display: inline-flex;
   align-items: center;
   padding: 16px 32px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #ffffff;
+  background: #ffffff;
+  color: #111111;
   font-weight: 500;
-  font-size: 0.95rem;
-  border-radius: 4px;
+  font-size: var(--text-base);
+  border-radius: 50px;
   transition: var(--transition-normal);
 }
 
 .btn-hero-secondary:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  z-index: 10;
-}
-
-.hero-scroll span {
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  writing-mode: vertical-rl;
-}
-
-.scroll-line {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(to bottom, var(--color-accent), transparent);
 }
 
 .search-bar-wrapper {
@@ -146,7 +123,7 @@
     padding: 0 24px 60px;
   }
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   .hero-scroll {
     display: none;
@@ -154,9 +131,18 @@
 }
 
 @media (max-width: 576px) {
+  .hero {
+    padding: 0 20px 60px;
+    justify-content: center;
+    padding-top: 40px;
+  }
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     letter-spacing: -1px;
+  }
+  .hero-description {
+    font-size: var(--text-base);
+    line-height: 1.6;
   }
   .hero-buttons {
     flex-direction: column;

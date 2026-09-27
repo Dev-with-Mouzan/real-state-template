@@ -27,24 +27,27 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="services section container" id="services">
-      <div className="services-layout">
-        <div className="services-header">
-          <p className="section-subtitle">Our Services</p>
-          <h2 className="section-title">Everything You Need<br />Under One Roof</h2>
-          <p className="services-description">
-            Comprehensive real estate solutions tailored to your needs, from buying to investing.
-          </p>
-        </div>
+    <section className="services" id="services">
+      <div className="services-container">
+        <div className="services-layout">
+          <div className="services-header">
+            <span className="section-tag">What We Offer</span>
+            <h2 className="section-title">Comprehensive Real Estate Solutions</h2>
+            <p className="services-description">
+              From buying to investing, we provide end-to-end real estate services 
+              tailored to your unique needs and goals.
+            </p>
+          </div>
 
-        <div className="services-grid">
-          {servicesData.map((service, index) => (
-            <div className="service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-            </div>
-          ))}
+          <div className="services-grid">
+            {servicesData.map((service, index) => (
+              <div className="service-card" key={index}>
+                <div className="service-icon">{service.icon}</div>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

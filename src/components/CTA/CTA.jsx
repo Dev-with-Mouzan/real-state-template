@@ -3,17 +3,18 @@ import './CTA.css';
 
 const CTA = () => {
   return (
-    <section className="cta section">
-      <div className="cta-container container">
+    <section className="cta">
+      <div className="cta-container">
         <div className="cta-content">
-          <h2 className="cta-title">Ready to Find Your<br />Dream Property?</h2>
+          <span className="section-tag light">Get Started Today</span>
+          <h2 className="cta-title">Ready to Find Your Dream Property?</h2>
           <p className="cta-description">
-            Let us help you discover the perfect home that matches your lifestyle
+            Let us help you discover the perfect home that matches your lifestyle 
             and budget. Start your journey with Hamza Property today.
           </p>
           <div className="cta-buttons">
-            <a href="#contact" className="btn btn-accent">Contact Us</a>
-            <a href="#properties" className="btn btn-outline-light">Browse Properties</a>
+            <a href="#properties" className="cta-btn-primary">Browse Properties</a>
+            <a href="#contact" className="cta-btn-secondary">Contact Us</a>
           </div>
         </div>
         <div className="cta-image">

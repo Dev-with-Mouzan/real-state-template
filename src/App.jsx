@@ -1,33 +1,27 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import PropertyListings from './components/PropertyListings/PropertyListings';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import Process from './components/Process/Process';
-import PropertyTypes from './components/PropertyTypes/PropertyTypes';
-import Testimonials from './components/Testimonials/Testimonials';
-import Blog from './components/Blog/Blog';
-import CTA from './components/CTA/CTA';
-import Footer from './components/Footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import PropertyDetailPage from './pages/PropertyDetailPage';
+import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
+import './App.css';
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Hero />
-      <Features />
-      <PropertyListings />
-      <About />
-      <Services />
-      <Process />
-      <PropertyTypes />
-      <Testimonials />
-      <Blog />
-      <CTA />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/property/:id" element={<PropertyDetailPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<BlogDetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Router>
   );
 }
 

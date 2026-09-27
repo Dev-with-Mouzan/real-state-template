@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import './Hero.css';
 
@@ -6,8 +7,13 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="hero-overlay"></div>
-      <div className="hero-content">
-        <span className="hero-badge">Real Estate Agency</span>
+      <motion.div
+        className="hero-content"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <span className="hero-badge">Real estate agency</span>
         <h1 className="hero-title">
           Find the Property<br />
           for Rent or <span className="text-accent">Sale.</span>
@@ -26,11 +32,7 @@ const Hero = () => {
             Contact Us
           </a>
         </div>
-      </div>
-      <div className="hero-scroll">
-        <span>Scroll Down</span>
-        <div className="scroll-line"></div>
-      </div>
+      </motion.div>
     </section>
   );
 };

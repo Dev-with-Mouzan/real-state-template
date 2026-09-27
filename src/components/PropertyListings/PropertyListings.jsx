@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { properties } from '../../data/properties';
 import PropertyCard from './PropertyCard';
+import { FadeIn } from '../AnimationWrapper/AnimationWrapper';
 import './PropertyListings.css';
 
 const tabs = ['All', 'Villa', 'Apartment', 'House'];
@@ -13,31 +14,35 @@ const PropertyListings = () => {
     : properties.filter(p => p.type === activeTab.toLowerCase());
 
   return (
-    <section className="property-listings section container" id="properties">
-      <div className="property-listings-header">
-        <div className="section-header">
-          <p className="section-subtitle">Featured Properties</p>
-          <h2 className="section-title">Premium Properties<br />For A Better Lifestyle</h2>
+    <section className="property-listings" id="properties">
+      <div className="property-listings-container">
+        <FadeIn>
+          <div className="section-heading">
+            <span className="section-tag">Our Portfolio</span>
+            <h2 className="section-title">Premium Properties For A Better Lifestyle</h2>
+            <p className="section-description">Explore our curated collection of luxury homes, apartments, and villas designed for modern living.</p>
+          </div>
+        </FadeIn>
+
+        <div className="property-tabs">
+          {tabs.map(tab => (
+            <button
+              key={tab}
+              className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
-        <a href="#" className="view-all-link">View All Properties</a>
-      </div>
 
-      <div className="property-tabs">
-        {tabs.map(tab => (
-          <button
-            key={tab}
-            className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div className="property-grid">
-        {filteredProperties.map(property => (
-          <PropertyCard key={property.id} property={property} />
-        ))}
+        <FadeIn delay={0.2}>
+          <div className="property-grid">
+            {filteredProperties.map(property => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
